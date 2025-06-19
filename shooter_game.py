@@ -1,6 +1,9 @@
+from itertools import count
+
 from pygame import *
 import sys
 import os
+from random import randint
 
 def resource_path(relative_path):
     try:
@@ -34,11 +37,10 @@ class Player(GameSprite):
 class Enemy(GameSprite):
     def move(self):
         if self.rect.y < screen_height:
-            self.rect.y -= self.speed
-            self.image = transform.scale(image.load(resource_path('cyborgL.png')), (100, 100))
+            self.rect.y += self.speed
 
 font.init()
-font = font.Font(None, 70)
+font1 = font.Font(None, 70)
 
 window = display.set_mode((0, 0), FULLSCREEN)
 display.set_caption('Космос')
@@ -52,37 +54,61 @@ background = transform.scale(
 
 clock = time.Clock()
 
-win = font.render(
+win = font1.render(
                 'YOU WIN!', True, (255, 215, 0)
             )
 
-lose = font.render(
+lose = font1.render(
                     'YOU LOSE!', True, (255, 0, 0)
                 )
-print(screen_width)
-FPS = 90
+
+number = 0
+score = font1.render(
+    "Счёт: " + str(number), True, (255, 255, 255)
+)
+
+a = 0
+miss = font1.render(
+    'Пропущено: '+str(a),True, (255, 255, 255)
+)
+
+FPS = 60
 
 mixer.init()
 mixer.music.load('space.ogg')
 #mixer.music.play()
 
 seredina = screen_height / 2
-x = screen_width - 50
 y = screen_height - 100
 
 player = Player('rocket.png',seredina,y,10)
+enemy1 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
+enemy2 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
+enemy3 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
+enemy4 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
+enemy5 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
+
+orda = [enemy1,enemy5,enemy4,enemy2,enemy3]
 
 game = True
 
 while game == True:
     window.blit(background, (0, 0))
     player.reset()
+    window.blit(score,(0,0))
+    window.blit(miss, (0,50))
+
+    for i in orda:
+        i.reset()
 
     for e in event.get():
         if e.type == QUIT:
             game = False
 
     player.move()
+
+    for i in orda:
+        i.move()
 
     display.update()
     clock.tick(FPS)
