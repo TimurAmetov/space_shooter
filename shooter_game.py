@@ -1,5 +1,3 @@
-from itertools import count
-
 from pygame import *
 import sys
 import os
@@ -38,6 +36,10 @@ class Enemy(GameSprite):
     def move(self):
         if self.rect.y < screen_height:
             self.rect.y += self.speed
+
+class Bullet(GameSprite):
+    def move(self):
+        self.rect.y -= self.speed
 
 font.init()
 font1 = font.Font(None, 70)
@@ -82,15 +84,17 @@ seredina = screen_height / 2
 y = screen_height - 100
 
 player = Player('rocket.png',seredina,y,10)
-enemy1 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
-enemy2 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
-enemy3 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
-enemy4 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
-enemy5 = Enemy('ufo.png', randint(150,screen_width-150),100,randint(2,4))
+orda = []
+magazin = []
 
-orda = [enemy1,enemy5,enemy4,enemy2,enemy3]
+for _ in range(5):
+    enemy = Enemy('ufo.png', randint(150,screen_width-150),0,randint(2,4))
+    orda.append(enemy)
 
 game = True
+
+last_shot = 0
+delay = 500
 
 while game == True:
     window.blit(background, (0, 0))
@@ -98,17 +102,31 @@ while game == True:
     window.blit(score,(0,0))
     window.blit(miss, (0,50))
 
-    for i in orda:
-        i.reset()
-
     for e in event.get():
         if e.type == QUIT:
             game = False
+
+    keys_pressed = key.get_pressed()
+
+    current_time = time.get_ticks()
+    if keys_pressed[K_SPACE] and current_time - last_shot > delay:
+        bullet = Bullet('bullet.png', player.rect.x, player.rect.y, 20)
+        magazin.append(bullet)
+        last_shot = current_time
 
     player.move()
 
     for i in orda:
         i.move()
+        i.reset()
+        #if i.rect.y >= screen_height:
+
+
+    for bullet in magazin:
+        bullet.move()
+        bullet.reset()
+        if bullet.rect.y <= 0:
+            magazin.remove(bullet)
 
     display.update()
     clock.tick(FPS)

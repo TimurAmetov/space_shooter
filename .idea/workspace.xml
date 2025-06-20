@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21a233fa-1fe6-4f05-93bf-a9f5cea9c844" name="Changes" comment="v. 001&#10;? fix player move &amp; player position&#10;&#10;v. 002 &#10;fixed all truble v. 001">
+    <list default="true" id="21a233fa-1fe6-4f05-93bf-a9f5cea9c844" name="Changes" comment="v. 1&#10;? fix player move &amp; player position&#10;&#10;v. 2 &#10;fixed all truble v. 1&#10;&#10;v. 3&#10;added score, miss tables&#10;added ufo enemy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shooter_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/shooter_game.py" afterDir="false" />
     </list>
@@ -85,13 +85,22 @@
       <option name="project" value="LOCAL" />
       <updated>1750345114255</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="v. 1&#10;? fix player move &amp; player position&#10;&#10;v. 2 &#10;fixed all truble v. 1&#10;&#10;v. 3&#10;added score, miss tables&#10;added ufo enemy">
+      <option name="closed" value="true" />
+      <created>1750347119165</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1750347119165</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v. 001" />
     <MESSAGE value="v. 001&#10;&#10;? fix player move &amp; player position" />
     <MESSAGE value="v. 001&#10;? fix player move &amp; player position&#10;&#10;v. 002 &#10;fixed all truble v. 001" />
-    <option name="LAST_COMMIT_MESSAGE" value="v. 001&#10;? fix player move &amp; player position&#10;&#10;v. 002 &#10;fixed all truble v. 001" />
+    <MESSAGE value="v. 1&#10;? fix player move &amp; player position&#10;&#10;v. 2 &#10;fixed all truble v. 1&#10;&#10;v. 3&#10;added score, miss tables&#10;added ufo enemy" />
+    <option name="LAST_COMMIT_MESSAGE" value="v. 1&#10;? fix player move &amp; player position&#10;&#10;v. 2 &#10;fixed all truble v. 1&#10;&#10;v. 3&#10;added score, miss tables&#10;added ufo enemy" />
   </component>
 </project>
