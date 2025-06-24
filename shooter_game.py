@@ -78,10 +78,11 @@ mixer.init()
 mixer.music.load('space.ogg')
 #mixer.music.play()
 
-seredina = screen_height / 2
+seredina_x = screen_height / 2
+seredina_y = screen_width / 2
 y = screen_height - 100
 
-player = Player('rocket.png',seredina,y,10)
+player = Player('rocket.png',seredina_x,y,10)
 orda = []
 magazin = []
 
@@ -132,6 +133,28 @@ while game == True:
             "Счёт: " + str(score), True, (255, 255, 255)
         )
         window.blit(a, (0, 0))
+
+    if score == 30:
+        finish = True
+        win = font1.render(
+            'Ты победил', True, (0, 255,155)
+        )
+        window.blit(win, (seredina_x, seredina_y))
+
+    if miss == 5:
+        finish = True
+        lose = font1.render(
+            'Ты проиграл', True, (255, 255, 255)
+        )
+        window.blit(lose,(seredina_x,seredina_y))
+
+    for i in orda:
+        if sprite.collide_rect(player, i):
+            finish = True
+            lose = font1.render(
+                'Ты проиграл', True, (255, 255, 255)
+            )
+            window.blit(lose, (seredina_x, seredina_y))
 
     for e in event.get():
         if e.type == QUIT:
