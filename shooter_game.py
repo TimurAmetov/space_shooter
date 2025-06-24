@@ -12,13 +12,15 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 class GameSprite(sprite.Sprite):
-    def __init__(self, player_image, player_x, player_y, player_speed):
+    def __init__(self, player_image, player_x, player_y, player_speed, miss_score = 0, score = 0):
         super().__init__()
         self.image = transform.scale(image.load(resource_path(player_image)), (100, 100))
         self.speed = player_speed
         self.rect = self.image.get_rect()
         self.rect.x = player_x
         self.rect.y = player_y
+        self.miss_score = 0
+        self.score = 0
 
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
@@ -36,10 +38,24 @@ class Enemy(GameSprite):
     def move(self):
         if self.rect.y < screen_height:
             self.rect.y += self.speed
+        if self.rect.y >= screen_height:
+            orda.remove(i)
+            enemy = Enemy('ufo.png', randint(150, screen_width - 150), 0, randint(2, 4))
+            orda.append(enemy)
+            self.miss_score += 1
 
 class Bullet(GameSprite):
     def move(self):
         self.rect.y -= self.speed
+        for i in orda:
+            if sprite.collide_rect(bullet, i):
+                orda.remove(i)
+                enemy = Enemy('ufo.png', randint(150, screen_width - 150), 0, randint(2, 4))
+                orda.append(enemy)
+                magazin.remove(bullet)
+                self.score += 1
+
+
 
 font.init()
 font1 = font.Font(None, 70)
@@ -55,24 +71,6 @@ background = transform.scale(
 )
 
 clock = time.Clock()
-
-win = font1.render(
-                'YOU WIN!', True, (255, 215, 0)
-            )
-
-lose = font1.render(
-                    'YOU LOSE!', True, (255, 0, 0)
-                )
-
-number = 0
-score = font1.render(
-    "Счёт: " + str(number), True, (255, 255, 255)
-)
-
-a = 0
-miss = font1.render(
-    'Пропущено: '+str(a),True, (255, 255, 255)
-)
 
 FPS = 60
 
@@ -95,38 +93,49 @@ game = True
 
 last_shot = 0
 delay = 500
+miss = 0
+score = 0
+finish = False
 
 while game == True:
     window.blit(background, (0, 0))
-    player.reset()
-    window.blit(score,(0,0))
-    window.blit(miss, (0,50))
+
+    if finish == False:
+        player.reset()
+        keys_pressed = key.get_pressed()
+
+        current_time = time.get_ticks()
+        if keys_pressed[K_SPACE] and current_time - last_shot > delay:
+            bullet = Bullet('bullet.png', player.rect.x, player.rect.y, 20)
+            magazin.append(bullet)
+            last_shot = current_time
+
+        player.move()
+
+        for i in orda:
+            i.move()
+            i.reset()
+            miss += i.miss_score
+            b = font1.render(
+                'Пропущено: ' + str(miss), True, (255, 255, 255)
+            )
+            window.blit(b, (0, 50))
+
+        for bullet in magazin:
+            bullet.move()
+            bullet.reset()
+            if bullet.rect.y <= 0:
+                magazin.remove(bullet)
+            score += bullet.score
+
+        a = font1.render(
+            "Счёт: " + str(score), True, (255, 255, 255)
+        )
+        window.blit(a, (0, 0))
 
     for e in event.get():
         if e.type == QUIT:
             game = False
-
-    keys_pressed = key.get_pressed()
-
-    current_time = time.get_ticks()
-    if keys_pressed[K_SPACE] and current_time - last_shot > delay:
-        bullet = Bullet('bullet.png', player.rect.x, player.rect.y, 20)
-        magazin.append(bullet)
-        last_shot = current_time
-
-    player.move()
-
-    for i in orda:
-        i.move()
-        i.reset()
-        #if i.rect.y >= screen_height:
-
-
-    for bullet in magazin:
-        bullet.move()
-        bullet.reset()
-        if bullet.rect.y <= 0:
-            magazin.remove(bullet)
 
     display.update()
     clock.tick(FPS)
