@@ -146,7 +146,8 @@ while game == True:
                 c.move()
                 c.reset()
                 if sprite.collide_rect(player,c):
-                    delay -= 100
+                    if delay >= 200:
+                        delay -= 50
                     up_list.remove(c)
 
 
@@ -155,7 +156,7 @@ while game == True:
         )
         window.blit(a, (0, 0))
 
-    if score == 30:
+    if score == 50:
         finish = True
         win = font1.render(
             'Ты победил', True, (0, 255,155)
