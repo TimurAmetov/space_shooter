@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21a233fa-1fe6-4f05-93bf-a9f5cea9c844" name="Changes" comment="v. 5&#10;&#10;add score, miss_score&#10;add respawn enemy&#10;kill enemy&#10;&#10;80% code complete">
+    <list default="true" id="21a233fa-1fe6-4f05-93bf-a9f5cea9c844" name="Changes" comment="v. 6&#10;&#10;add lose &amp; win&#10;death player if collide enemy&#10;&#10;100% code complete">
+      <change afterPath="$PROJECT_DIR$/up-arrow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shooter_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/shooter_game.py" afterDir="false" />
     </list>
@@ -109,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750777903590</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="v. 6&#10;&#10;add lose &amp; win&#10;death player if collide enemy&#10;&#10;100% code complete">
+      <option name="closed" value="true" />
+      <created>1750778940335</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1750778940335</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +139,7 @@
     <MESSAGE value="v. 1&#10;? fix player move &amp; player position&#10;&#10;v. 2 &#10;fixed all truble v. 1&#10;&#10;v. 3&#10;added score, miss tables&#10;added ufo enemy" />
     <MESSAGE value="v.4&#10;&#10;add bullets" />
     <MESSAGE value="v. 5&#10;&#10;add score, miss_score&#10;add respawn enemy&#10;kill enemy&#10;&#10;80% code complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="v. 5&#10;&#10;add score, miss_score&#10;add respawn enemy&#10;kill enemy&#10;&#10;80% code complete" />
+    <MESSAGE value="v. 6&#10;&#10;add lose &amp; win&#10;death player if collide enemy&#10;&#10;100% code complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="v. 6&#10;&#10;add lose &amp; win&#10;death player if collide enemy&#10;&#10;100% code complete" />
   </component>
 </project>

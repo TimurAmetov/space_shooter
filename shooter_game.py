@@ -12,7 +12,7 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 class GameSprite(sprite.Sprite):
-    def __init__(self, player_image, player_x, player_y, player_speed, miss_score = 0, score = 0):
+    def __init__(self, player_image, player_x, player_y, player_speed, delay = 500, miss_score = 0, score = 0):
         super().__init__()
         self.image = transform.scale(image.load(resource_path(player_image)), (100, 100))
         self.speed = player_speed
@@ -21,6 +21,7 @@ class GameSprite(sprite.Sprite):
         self.rect.y = player_y
         self.miss_score = 0
         self.score = 0
+        self.delay = 500
 
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
@@ -55,7 +56,12 @@ class Bullet(GameSprite):
                 magazin.remove(bullet)
                 self.score += 1
 
-
+class Upgrade(GameSprite):
+    def move(self):
+        if self.rect.y < screen_height:
+            self.rect.y += self.speed
+        if self.rect.y >= screen_height:
+            up_list.remove(c)
 
 font.init()
 font1 = font.Font(None, 70)
@@ -85,6 +91,7 @@ y = screen_height - 100
 player = Player('rocket.png',seredina_x,y,10)
 orda = []
 magazin = []
+up_list = []
 
 for _ in range(5):
     enemy = Enemy('ufo.png', randint(150,screen_width-150),0,randint(2,4))
@@ -96,6 +103,7 @@ last_shot = 0
 delay = 500
 miss = 0
 score = 0
+kd_spawn = 10
 finish = False
 
 while game == True:
@@ -106,7 +114,7 @@ while game == True:
         keys_pressed = key.get_pressed()
 
         current_time = time.get_ticks()
-        if keys_pressed[K_SPACE] and current_time - last_shot > delay:
+        if keys_pressed[K_SPACE] and current_time - last_shot > delay or len(magazin) > 2:
             bullet = Bullet('bullet.png', player.rect.x, player.rect.y, 20)
             magazin.append(bullet)
             last_shot = current_time
@@ -128,6 +136,19 @@ while game == True:
             if bullet.rect.y <= 0:
                 magazin.remove(bullet)
             score += bullet.score
+
+        if score % 10 == 0 and score != 0 and len(up_list) == 0:
+            upgrade = Upgrade('up-arrow.png', randint(150, screen_width - 150), 0, 3)
+            up_list.append(upgrade)
+
+        if len(up_list) != 0:
+            for c in up_list:
+                c.move()
+                c.reset()
+                if sprite.collide_rect(player,c):
+                    delay -= 100
+                    up_list.remove(c)
+
 
         a = font1.render(
             "Счёт: " + str(score), True, (255, 255, 255)
