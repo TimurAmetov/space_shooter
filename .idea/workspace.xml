@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21a233fa-1fe6-4f05-93bf-a9f5cea9c844" name="Changes" comment="v. 9&#10;&#10;add music and sound" />
+    <list default="true" id="21a233fa-1fe6-4f05-93bf-a9f5cea9c844" name="Changes" comment="v. 10&#10;&#10;fix fire sound">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shooter_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/shooter_game.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +17,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "TimurAmetov"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TimurAmetov/space_shooter",
+    "accountId": "5d490908-243a-4b72-8b47-52d7d48d94a8"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -21,16 +37,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.shooter_game.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.shooter_game.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/pycharm/Space_Shuter/dist"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pycharm\Space_Shuter\dist" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\pycharm\Space_Shuter" />
     </key>
@@ -122,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751035621500</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="v. 10&#10;&#10;fix fire sound">
+      <option name="closed" value="true" />
+      <created>1751035878974</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751035878975</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +173,7 @@
     <MESSAGE value="v. 5&#10;&#10;add score, miss_score&#10;add respawn enemy&#10;kill enemy&#10;&#10;80% code complete" />
     <MESSAGE value="v. 6&#10;&#10;add lose &amp; win&#10;death player if collide enemy&#10;&#10;100% code complete" />
     <MESSAGE value="v. 9&#10;&#10;add music and sound" />
-    <option name="LAST_COMMIT_MESSAGE" value="v. 9&#10;&#10;add music and sound" />
+    <MESSAGE value="v. 10&#10;&#10;fix fire sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="v. 10&#10;&#10;fix fire sound" />
   </component>
 </project>
