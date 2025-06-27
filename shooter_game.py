@@ -82,7 +82,9 @@ FPS = 60
 
 mixer.init()
 mixer.music.load('space.ogg')
-#mixer.music.play()
+mixer.music.play()
+
+fire = mixer.Sound('fire.ogg')
 
 seredina_x = screen_height / 2
 seredina_y = screen_width / 2
