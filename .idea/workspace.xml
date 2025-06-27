@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21a233fa-1fe6-4f05-93bf-a9f5cea9c844" name="Changes" comment="v. 6&#10;&#10;add lose &amp; win&#10;death player if collide enemy&#10;&#10;100% code complete">
-      <change afterPath="$PROJECT_DIR$/up-arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shooter_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/shooter_game.py" afterDir="false" />
-    </list>
+    <list default="true" id="21a233fa-1fe6-4f05-93bf-a9f5cea9c844" name="Changes" comment="v. 9&#10;&#10;add music and sound" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750778940335</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="v. 9&#10;&#10;add music and sound">
+      <option name="closed" value="true" />
+      <created>1751035621500</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751035621500</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +144,7 @@
     <MESSAGE value="v.4&#10;&#10;add bullets" />
     <MESSAGE value="v. 5&#10;&#10;add score, miss_score&#10;add respawn enemy&#10;kill enemy&#10;&#10;80% code complete" />
     <MESSAGE value="v. 6&#10;&#10;add lose &amp; win&#10;death player if collide enemy&#10;&#10;100% code complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="v. 6&#10;&#10;add lose &amp; win&#10;death player if collide enemy&#10;&#10;100% code complete" />
+    <MESSAGE value="v. 9&#10;&#10;add music and sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="v. 9&#10;&#10;add music and sound" />
   </component>
 </project>

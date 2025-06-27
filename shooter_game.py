@@ -120,6 +120,7 @@ while game == True:
             bullet = Bullet('bullet.png', player.rect.x, player.rect.y, 20)
             magazin.append(bullet)
             last_shot = current_time
+            fire.play()
 
         player.move()
 
